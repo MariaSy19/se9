@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company</title>
+    <link
+      rel="stylesheet"
+      href="../assets/vendors/bootstrap/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Start Of Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Company</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Employees
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../employees/add.html"
+                    >Add Employee</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../employees/list.html"
+                    >List Employee</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Department
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./add.html">Add Department</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./list.html"
+                    >List Department</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Nav -->
+    <div class="container col-6 pt-5">
+      <h2 class="text-center text-light">Add New Department</h2>
+      <div class="card border-0">
+        <div class="card-body bg-dark text-light">
+          <div class="alert alert-success">
+            <p class="fs-4 mb-0">Added Successfully</p>
+          </div>
+          <form method="POST">
+            <div class="form-group mb-2">
+              <label for="department" class="form-label"> Department </label>
+              <input
+                type="text"
+                class="form-control"
+                id="department"
+                name="department"
+              />
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary">Add Department</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
