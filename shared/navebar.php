@@ -22,7 +22,7 @@ require_once 'C:\xampp\htdocs\company\app\functions.php';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?= URL('index.php')?>"
+              <a class="nav-link active" aria-current="page" href="<?= URL('index.php/')?>"
                 >Home</a
               >
             </li>

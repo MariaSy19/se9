@@ -1,8 +1,31 @@
 <?php
-// UI
-require_once './shared/header.php';
-require_once './shared/navebar.php';
 
+//config
+require_once 'C:\xampp\htdocs\company\app\configDB.php';
+
+// UI
+require_once '../shared/header.php';
+require_once '../shared/navebar.php';
+
+$messge = '';
+if (isset($_POST['submit'])) 
+{
+  $name = $_POST['name'];
+  $phone = $_POST['phone'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $address = $_POST['address'];
+  $department_id = $_POST['department_id'];
+
+  $insertQuery = "INSERT INTO `employees` values (null,'$name','$email',$department_id,'$phone','$address','$password')";
+  $insert = mysqli_query($conn, $insertQuery);
+  if ($insert) {
+    $messge = 'Employee Added Successfully';
+    } 
+}
+
+$departmentQuery = "SELECT * FROM `departments`";
+$departments = mysqli_query($con , $departmentQuery);
 ?>
 
 
@@ -65,9 +88,10 @@ require_once './shared/navebar.php';
                   id="department"
                   class="form-select"
                 >
-                  <option value="1">Hr</option>
-                  <option value="2">Sales</option>
-                  <option value="3">Marketing</option>
+                <?php foreach($departments as  $department ):?> 
+                  <option value="<?=$department['id']?>"><?=$department['department']?></option>
+                  <?php endforeach;?>
+        
                 </select>
               </div>
               <div class="col-12 text-center">
@@ -82,6 +106,6 @@ require_once './shared/navebar.php';
     </div>
   </body>
 <?php
-require_once './shared/footer.php';
+require_once '../shared/footer.php';
 ?>
 

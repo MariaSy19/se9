@@ -1,7 +1,7 @@
 <?php
 //UI
-require_once './shared/header.php';
-require_once './shared/navebar.php';
+require_once '../shared/header.php';
+require_once '../shared/navebar.php';
 
 ?>
 
@@ -73,6 +73,6 @@ require_once './shared/navebar.php';
 </html>
 
 <?php
-require_once './shared/footer.php';
+require_once '../shared/footer.php';
 
 ?>
