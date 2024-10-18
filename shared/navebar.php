@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Company</title>
-    <link
-      rel="stylesheet"
-      href="../assets/vendors/bootstrap/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../assets/css/main.css" />
-  </head>
+<?php
+// config 
+require_once 'C:\xampp\htdocs\company\app\functions.php';
+?>
 
-  <body>
-    <!-- Start Of Navbar -->
+
+<body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
-        <a class="navbar-brand" href="../index.html">Company</a>
+        <a class="navbar-brand" href="index.html">Company</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -30,10 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="../index.html"
+              <a class="nav-link active" aria-current="page" href="index.html"
                 >Home</a
               >
             </li>
@@ -49,12 +38,12 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="../employees/add.html"
+                  <a class="dropdown-item" href="./employees/add.html"
                     >Add Employee</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../employees/list.html"
+                  <a class="dropdown-item" href="./employees/list.html"
                     >List Employee</a
                   >
                 </li>
@@ -72,10 +61,12 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="./add.html">Add Department</a>
+                  <a class="dropdown-item" href="./departments/add.html"
+                    >Add Department</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./list.html"
+                  <a class="dropdown-item" href="./departments/list.html"
                     >List Department</a
                   >
                 </li>
@@ -85,31 +76,5 @@
         </div>
       </div>
     </nav>
-    <!-- End of Nav -->
-    <div class="container col-6 pt-5">
-      <h2 class="text-center text-light">Update Department</h2>
-      <div class="card border-0">
-        <div class="card-body bg-dark text-light">
-          <form method="POST">
-            <div class="form-group mb-2">
-              <label for="department" class="form-label"> Department </label>
-              <input
-                type="text"
-                value=""
-                class="form-control"
-                id="department"
-                name="department"
-              />
-            </div>
-            <div class="text-center">
-              <button class="btn btn-warning">Update Department</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="./assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
   </body>
-</html>
