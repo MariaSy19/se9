@@ -7,7 +7,7 @@ require_once 'C:\xampp\htdocs\company\app\functions.php';
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Company</a>
+        <a class="navbar-brand" href="<?= URL('')?>">Company</a>
         <button
           class="navbar-toggler"
           type="button"

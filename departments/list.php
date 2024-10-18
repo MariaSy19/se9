@@ -1,8 +1,25 @@
 <?php
+//config
+require_once 'C:\xampp\htdocs\company\app\configDB.php';
+
 //UI
 require_once '../shared/header.php';
 require_once '../shared/navebar.php';
 
+
+if (isset($_GET['delete']))
+ {
+  $id = $_GET['delete'];
+  $deleteQuery = "DELETE FROM `departments` where id = $id";
+  $delete = mysqli_query($con, $deleteQuery);
+  if ($delete) {
+    path('departments/list.php');
+  }
+ }
+
+$selectQuery =  "SELECT * FROM `departments`";
+$select = mysqli_query($con, $selectQuery);
+$numOfRows = mysqli_num_rows($select);
 ?>
 
     <div class="container col-6 pt-5">
@@ -19,35 +36,30 @@ require_once '../shared/navebar.php';
             </thead>
             <tbody>
               <!-- start of row -->
+               <?php if ($numOfRows > 0):?>
+              <?php foreach($select as $index=> $department):?>
               <tr>
-                <td>1</td>
-                <td>Hr</td>
+                
+                <td><?= $index + 1?></td>
+                <td><?= $department['department']?></td>
                 <td>
-                  <a href="" class="btn btn-warning">Edit</a>
-                  <a href="" class="btn btn-danger">Delete</a>
+                  <a href="edit.php?edit=<?=$department['id']?>" class="btn btn-warning">Edit</a>
+                  <a href="?delete=<?= $department['id']?> " class="btn btn-danger">Delete</a>
                 </td>
+                
               </tr>
-              <!-- end of Row -->
-              <tr>
-                <td>2</td>
-                <td>Sales</td>
-                <td>
-                  <a href="" class="btn btn-warning">Edit</a>
-                  <a href="" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Marketing</td>
-                <td>
-                  <a href="" class="btn btn-warning">Edit</a>
-                  <a href="" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-              <!-- If No Data -->
-              <tr>
+              <?php endforeach;?>
+              <?php  else: ?>
+                <tr>
                 <td colspan="3" class="text-center">no data to show</td>
-              </tr>
+                </tr>
+              <?php endif; ?>
+
+              <!-- end of Row -->
+              <!-- If No Data -->
+              <!-- <tr>
+                <td colspan="3" class="text-center">no data to show</td>
+              </tr> -->
             </tbody>
           </table>
         </div>

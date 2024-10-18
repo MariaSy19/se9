@@ -11,12 +11,14 @@ if (isset($_POST['department']))
   $department = $_POST['department'];
   $insertQuery = "INSERT INTO `departments` VALUES (NULL , '$department') ";
   $insert = mysqli_query($con,$insertQuery);
+  
+  if ($insert) {
+    $message = 'Department added successfully';
+    # code...
+  }
 
 }
-if ($insert) {
-  $message = 'Department added successfully';
-  # code...
-}
+
 ?>
 
     <div class="container col-6 pt-5">
