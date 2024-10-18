@@ -3,7 +3,6 @@
 require_once 'C:\xampp\htdocs\company\app\functions.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>

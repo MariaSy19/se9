@@ -22,7 +22,7 @@ require_once 'C:\xampp\htdocs\company\app\functions.php';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link active" aria-current="page" href="<?= URL('index.php')?>"
                 >Home</a
               >
             </li>
@@ -38,12 +38,12 @@ require_once 'C:\xampp\htdocs\company\app\functions.php';
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="./employees/add.html"
+                  <a class="dropdown-item" href="<?= URL('employees/add.php')?>"
                     >Add Employee</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./employees/list.html"
+                  <a class="dropdown-item" href="<?= URL('employees/list.php')?>"
                     >List Employee</a
                   >
                 </li>
@@ -61,12 +61,12 @@ require_once 'C:\xampp\htdocs\company\app\functions.php';
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="./departments/add.html"
+                  <a class="dropdown-item" href="<?= URL('departments/add.php')?>"
                     >Add Department</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="./departments/list.html"
+                  <a class="dropdown-item" href="<?= URL('departments/list.php')?>"
                     >List Department</a
                   >
                 </li>
