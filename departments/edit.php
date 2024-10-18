@@ -1,7 +1,28 @@
 <?php
+//config
+require_once 'C:\xampp\htdocs\company\app\configDB.php';
+require_once 'C:\xampp\htdocs\company\app\functions.php';
 //UI
 require_once '../shared/header.php';
 require_once '../shared/navebar.php';
+
+$department = '';
+if (isset($_GET['edit'])) {
+  $id = $_GET['edit'];
+  $selectOneQuery = "SELECT * FROM `departments` where id = $id";
+  $selectOne = mysqli_query($con ,$selectOneQuery);
+  $row = mysqli_fetch_assoc($selectOne);
+  $department = $row['department'];
+  if (isset($_POST['department'])) {
+    # code...
+    $department = $_POST['department'];
+    $updateQuery = "UPDATE `departments` set department = '$department' where id = $id";
+    $update = mysqli_query($con ,$updateQuery);
+    if ($update) {
+      path("departments/list.php");
+    }
+  }
+}
 
 ?>
 
@@ -14,7 +35,7 @@ require_once '../shared/navebar.php';
               <label for="department" class="form-label"> Department </label>
               <input
                 type="text"
-                value=""
+                value="<?= $department?>"
                 class="form-control"
                 id="department"
                 name="department"
