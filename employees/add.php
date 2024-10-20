@@ -35,9 +35,11 @@ $departments = mysqli_query($con , $departmentQuery);
       <div class="card border-0">
         <div class="card-body bg-dark text-light">
           <!-- Start Of Event -->
+          <?php if(!empty($messge)):?>
           <div class="alert alert-success">
             <p class="fs-4 mb-0">Employee Added Successfully</p>
           </div>
+          <?php endif;?>
           <!-- End of Event -->
           <form method="POST">
             <div class="row">

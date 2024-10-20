@@ -20,7 +20,7 @@ if (isset($_GET['delete']))
 }
 
 //Read Data
-$selectQuery = "SELECT * FROM `employees`";
+$selectQuery = "SELECT * FROM `employeeswithdepartments`";
 $select = mysqli_query($con, $selectQuery);
 $numOfRows = mysqli_num_rows($select);
 
@@ -52,8 +52,9 @@ $numOfRows = mysqli_num_rows($select);
                 <td><?= $employee['email'] ?></td>
                 <td><?= $employee['phone'] ?></td>
                 <td><?= $employee['address'] ?></td>
-                <td><?= $employee['department_id'] ?></td>
+                <td><?= $employee['department'] ?></td>
                 <td>
+                  <a href="show.php?show=<?=$employee['id']?>" class="btn btn-info">Show</a>
                 <a href="edit.php?edit=<?=$employee['id']?>" class="btn btn-warning">Edit</a>
                 <a href="?delete=<?= $employee['id']?> " class="btn btn-danger">Delete</a>
                 </td>
