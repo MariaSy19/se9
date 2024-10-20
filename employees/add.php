@@ -18,7 +18,7 @@ if (isset($_POST['submit']))
   $department_id = $_POST['department_id'];
 
   $insertQuery = "INSERT INTO `employees` values (null,'$name','$email',$department_id,'$phone','$address','$password')";
-  $insert = mysqli_query($conn, $insertQuery);
+  $insert = mysqli_query($con, $insertQuery);
   if ($insert) {
     $messge = 'Employee Added Successfully';
     } 

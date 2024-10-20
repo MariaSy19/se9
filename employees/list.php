@@ -7,6 +7,19 @@ require_once 'C:\xampp\htdocs\company\app\configDB.php';
 require_once '../shared/header.php';
 require_once '../shared/navebar.php';
 
+// Delete 
+if (isset($_GET['delete'])) 
+{
+  $id = $_GET['delete'];
+  $deleteQuery = "DELETE FROM `employees` where id = $id";
+  $delete = mysqli_query($con,$deleteQuery);
+  if ($delete) {
+    path("employees/list.php");
+    # code...
+  }
+}
+
+//Read Data
 $selectQuery = "SELECT * FROM `employees`";
 $select = mysqli_query($con, $selectQuery);
 $numOfRows = mysqli_num_rows($select);
@@ -14,12 +27,12 @@ $numOfRows = mysqli_num_rows($select);
 ?>
 
 <div class="container pt-5">
-  <h2 class="text-center text-light">List All Employees</h2>
+  <h2 class="text-center text-light">List All Employees: <?= $numOfRows ?></h2>
   <div class="card border-0">
     <div class="card-body bg-dark text-light">
       <table class="table table-dark">
         <thead>
-          <tr>
+          <tr> 
             <th>#</th>
             <th>Employee</th>
             <th>Email</th>
@@ -41,8 +54,8 @@ $numOfRows = mysqli_num_rows($select);
                 <td><?= $employee['address'] ?></td>
                 <td><?= $employee['department_id'] ?></td>
                 <td>
-                <a href="edit.php?edit=<?=$department['id']?>" class="btn btn-warning">Edit</a>
-                <a href="?delete=<?= $department['id']?> " class="btn btn-danger">Delete</a>
+                <a href="edit.php?edit=<?=$employee['id']?>" class="btn btn-warning">Edit</a>
+                <a href="?delete=<?= $employee['id']?> " class="btn btn-danger">Delete</a>
                 </td>
               </tr>
             <?php endforeach; ?>
